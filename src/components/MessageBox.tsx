@@ -5,12 +5,13 @@ import { FC } from 'react';
 
 const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const box = css`
-    background-color: #2b3742;
+    background-color: #262f3a;
     display: flex;
     flex-direction: column;
     color: white;
     width: 400px;
     height: 400px;
+    padding: 12px 70px 50px;
   `;
 
   const arrow = css`
@@ -52,7 +53,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const find_candidates = css`
     height: 40px;
     width: 150px;
-    background-color: #35cc70;
+    background-color: #2aa859;
     display: flex;
     flex-direction: column;
     justify-content: center;
