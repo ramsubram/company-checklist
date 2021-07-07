@@ -3,7 +3,7 @@ interface Props {
   rotate?: number;
 }
 
-const Arrow = ({ size = '6px', rotate = 0 }: Props) => {
+const Arrow = ({ size = '7px', rotate = 0 }: Props) => {
   return (
     <svg
       transform={`rotate(${rotate})`}

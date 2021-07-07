@@ -65,6 +65,16 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     flex-direction: row;
     justify-content: space-between;
   `;
+  const container_info = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  `;
+
+  const image = css`
+    width: 112px;
+    height: 90px;
+  `;
 
   return (
     <div css={box}>
@@ -72,7 +82,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
         <div css={top}>
           <div css={head}>
             <div css={less_than}>
-              <Arrow size={'10px'} rotate={90} />
+              <Arrow size={'1px'} rotate={90} />
             </div>
             <span css={check}>To checklist</span>
           </div>
@@ -84,16 +94,17 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
             </div>
           </div>
         </div>
+        <div css={container_info}>
+          <img css={image} src="/wa_comp_logo.png" alt="" />
+          <h1>Welcome to WA.works </h1>
+          <p>
+            View and interview as many candidates as you like, and don't pay
+            until you're ready to hire
+          </p>
 
-        <img src="/wa_comp_logo.png" alt="" />
-        <h1>Welcome to WA.works </h1>
-        <p>
-          View and interview as many candidates as you like, and don't pay until
-          you're ready to hire
-        </p>
-
-        <div css={find_candidates}>
-          <section>Find candidates</section>
+          <div css={find_candidates}>
+            <section>Find candidates</section>
+          </div>
         </div>
       </div>
     </div>
