@@ -7,15 +7,10 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const box = css`
     background-color: #2b3742;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    color: white;
     width: 400px;
     height: 400px;
-    justify-content: flex-end;
-  `;
-
-  const container = css`
-    color: white;
-    width: 100%;
   `;
 
   const arrow = css`
@@ -24,6 +19,20 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     flex-direction: column;
     justify-content: center;
     margin-left: 5px;
+  `;
+
+  const less_than = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5px;
+  `;
+
+  const check = css`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
   `;
 
   const hide = css`
@@ -35,29 +44,18 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     width: 50px;
   `;
 
-  const less_than = css`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-left: 5px;
-    flex-grow: -3;
-  `;
-
-  const check = css`
-    display: flex;
-    flex-direction: row;
-  `;
-
   const head = css`
     display: flex;
     flex-direction: row;
-    justify-content: ;
   `;
 
   const find_candidates = css`
     height: 40px;
     width: 150px;
     background-color: #35cc70;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   `;
 
   const top = css`
@@ -69,39 +67,52 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
+    flex-grow: 1;
   `;
 
   const image = css`
-    width: 112px;
-    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  `;
+
+  const find_candidates_row = css`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   `;
 
   return (
     <div css={box}>
-      <div css={container}>
-        <div css={top}>
-          <div css={head}>
+      <div css={top}>
+        <div css={head}>
+          <div css={check}>
             <div css={less_than}>
-              <Arrow size={'1px'} rotate={90} />
+              <Arrow size={'9px'} rotate={90} />
             </div>
-            <span css={check}>To checklist</span>
-          </div>
-
-          <div onClick={() => onHide()} css={hide}>
-            <span>Hide</span>
-            <div css={arrow}>
-              <Arrow />
-            </div>
+            <span>To checklist</span>
           </div>
         </div>
-        <div css={container_info}>
-          <img css={image} src="/wa_comp_logo.png" alt="" />
-          <h1>Welcome to WA.works </h1>
-          <p>
-            View and interview as many candidates as you like, and don't pay
-            until you're ready to hire
-          </p>
 
+        <div onClick={() => onHide()} css={hide}>
+          <span>Hide</span>
+          <div css={arrow}>
+            <Arrow size={'7px'} />
+          </div>
+        </div>
+      </div>
+      <div css={container_info}>
+        <div css={image}>
+          <img width="112px" height="90px" src="/wa_comp_logo.png" alt="" />
+        </div>
+        <h1>Welcome to WA.works </h1>
+        <p>
+          View and interview as many candidates as you like, and don't pay until
+          you're ready to hire
+        </p>
+
+        <div css={find_candidates_row}>
           <div css={find_candidates}>
             <section>Find candidates</section>
           </div>
