@@ -15,7 +15,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
 
   const container = css`
     color: white;
-    width: 200px;
+    width: 100%;
   `;
 
   const arrow = css`
@@ -37,26 +37,51 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
 
   const less_than = css`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     margin-left: 5px;
-    height: 10px;
+    flex-grow: -3;
+  `;
+
+  const check = css`
+    display: flex;
+    flex-direction: row;
+  `;
+
+  const head = css`
+    display: flex;
+    flex-direction: row;
+    justify-content: ;
+  `;
+
+  const find_candidates = css`
+    height: 40px;
+    width: 150px;
+    background-color: #35cc70;
+  `;
+
+  const top = css`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   `;
 
   return (
     <div css={box}>
       <div css={container}>
-        <div>
-          <span>To checklist</span>
-          <div css={less_than}>
-            <Arrow size={'10px'} rotate={90} />
+        <div css={top}>
+          <div css={head}>
+            <div css={less_than}>
+              <Arrow size={'10px'} rotate={90} />
+            </div>
+            <span css={check}>To checklist</span>
           </div>
-        </div>
 
-        <div onClick={() => onHide()} css={hide}>
-          <span>Hide</span>
-          <div css={arrow}>
-            <Arrow />
+          <div onClick={() => onHide()} css={hide}>
+            <span>Hide</span>
+            <div css={arrow}>
+              <Arrow />
+            </div>
           </div>
         </div>
 
@@ -67,7 +92,9 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
           you're ready to hire
         </p>
 
-        <section>Find candidates</section>
+        <div css={find_candidates}>
+          <section>Find candidates</section>
+        </div>
       </div>
     </div>
   );
