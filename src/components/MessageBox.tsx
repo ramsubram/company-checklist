@@ -5,7 +5,7 @@ import { FC } from 'react';
 
 const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const box = css`
-    background-color: #262f3a;
+    background-color: #2b3742;
     display: flex;
     flex-direction: column;
     color: white;
@@ -53,7 +53,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const find_candidates = css`
     height: 40px;
     width: 150px;
-    background-color: #2aa859;
+    background-color: #35cc70;
     display: flex;
     flex-direction: column;
     justify-content: center;
