@@ -3,7 +3,7 @@ interface Props {
   height?: string;
 }
 
-const Logo = ({ height = '90px', width = '112px' }: Props) => {
+const Logo = ({ height = '92px', width = '112px' }: Props) => {
   return (
     <svg
       height={height}

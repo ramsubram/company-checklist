@@ -14,7 +14,7 @@ const arrow = css`
 const button = css`
   display: flex;
   border-radius: 25px;
-  background-color: #2b3742ff;
+  background-color: #262f3a;
   color: white;
   height: 35px;
   font-size: 14px;

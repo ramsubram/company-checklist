@@ -2,10 +2,11 @@
 import { css } from '@emotion/react';
 import Arrow from './Arrow';
 import { FC } from 'react';
+import Logo from './Logo';
 
 const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const box = css`
-    background-color: #2b3742;
+    background-color: #262f3a;
     display: flex;
     flex-direction: column;
     color: white;
@@ -62,7 +63,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const find_candidates = css`
     height: 40px;
     width: 150px;
-    background-color: #35cc70;
+    background-color: #2aa859;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,7 +108,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
         <div css={head}>
           <div css={check}>
             <div css={less_than}>
-              <Arrow size={'9px'} rotate={90} />
+              <Arrow size={'8px'} rotate={90} />
             </div>
             <span>To checklist</span>
           </div>
@@ -122,7 +123,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
       </div>
       <div css={container_info}>
         <div css={image}>
-          <img width="112px" height="90px" src="/wa_comp_logo.png" alt="" />
+          <Logo width="112px" height="90px" />
         </div>
         <h1 css={h1}>Welcome to WA.works </h1>
         <div
