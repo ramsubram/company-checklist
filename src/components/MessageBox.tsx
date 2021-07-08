@@ -13,6 +13,9 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     width: 550px;
     height: 430px;
     padding: 12px 12px 12px 12px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
   `;
 
   const top = css`
@@ -29,6 +32,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     flex-direction: column;
     justify-content: center;
     margin-left: 5px;
+    margin-top: 7px;
   `;
 
   const less_than = css`
@@ -36,6 +40,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     flex-direction: column;
     justify-content: center;
     margin-left: 5px;
+    margin-right: 6px;
   `;
 
   const check = css`
