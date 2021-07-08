@@ -77,9 +77,10 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const container_info = css`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     flex-grow: 1;
+    padding-top: 30px;
   `;
 
   const image = css`
@@ -104,6 +105,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const p = css`
     max-width: 400px;
     margin-top: 3px;
+    margin-bottom: 100px;
     font-size: 14px;
   `;
 
