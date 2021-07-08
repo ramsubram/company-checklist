@@ -1,5 +1,6 @@
 import Button from './Button';
 import MessageBox from './MessageBox';
+import Welcome from './Welcome';
 import { useState } from 'react';
 
 const Checklist = () => {
