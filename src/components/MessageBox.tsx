@@ -9,9 +9,17 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     display: flex;
     flex-direction: column;
     color: white;
-    width: 400px;
-    height: 400px;
-    padding: 12px 70px 50px;
+    width: 550px;
+    height: 430px;
+    padding: 12px 12px 12px 12px;
+  `;
+
+  const top = css`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px;
+    font-size: 14px;
   `;
 
   const arrow = css`
@@ -48,6 +56,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const head = css`
     display: flex;
     flex-direction: row;
+    margin-right: 0px;
   `;
 
   const find_candidates = css`
@@ -59,11 +68,6 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     justify-content: center;
   `;
 
-  const top = css`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  `;
   const container_info = css`
     display: flex;
     flex-direction: column;
@@ -82,6 +86,19 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-size: 14px;
+  `;
+
+  const h1 = css`
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-size: 30px;
+  `;
+
+  const p = css`
+    max-width: 400px;
+    margin-top: 3px;
+    font-size: 14px;
   `;
 
   return (
@@ -107,11 +124,18 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
         <div css={image}>
           <img width="112px" height="90px" src="/wa_comp_logo.png" alt="" />
         </div>
-        <h1>Welcome to WA.works </h1>
-        <p>
-          View and interview as many candidates as you like, and don't pay until
-          you're ready to hire
-        </p>
+        <h1 css={h1}>Welcome to WA.works </h1>
+        <div
+          css={css`
+            display: flex;
+            justify-content: center;
+          `}
+        >
+          <p css={p}>
+            View and interview as many candidates as you like, and don't pay
+            until you're ready to hire
+          </p>
+        </div>
 
         <div css={find_candidates_row}>
           <div css={find_candidates}>
