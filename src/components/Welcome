@@ -1,0 +1,29 @@
+const Welcome = () => {
+  return (
+    <div css={container_info}>
+      <div css={image}>
+        <Logo width="112px" height="90px" />
+      </div>
+      <h1 css={h1}>Welcome to WA.works </h1>
+      <div
+        css={css`
+          display: flex;
+          justify-content: center;
+        `}
+      >
+        <p css={p}>
+          View and interview as many candidates as you like, and don't pay until
+          you're ready to hire
+        </p>
+      </div>
+
+      <div css={find_candidates_row}>
+        <div css={find_candidates}>
+          <section>Find candidates</section>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Welcome;

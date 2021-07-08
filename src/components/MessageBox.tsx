@@ -100,6 +100,8 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     margin-bottom: 0;
     margin-top: 20px;
     font-size: 30px;
+    font-family: 'Lobster Two', cursive;
+    /* font-family: 'Sofia', cursive; */
   `;
 
   const p = css`
