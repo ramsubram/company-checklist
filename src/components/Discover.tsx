@@ -1,12 +1,20 @@
 import { FC } from 'react';
+import Arrow from './Arrow';
 
-const Discover: FC<{ onOpen?: Function }> = ({ onOpen }) => {
+const Discover = () => {
   return (
     <div>
       <h1>Discover your next coworker</h1>
-      <input type="checkbox" />
-      <input type="checkbox" />
-      <input type="checkbox" />
+
+      <ul>
+        <input type="checkbox" />
+      </ul>
+      <ul>
+        <input type="checkbox" />
+      </ul>
+      <ul>
+        <input type="checkbox" />
+      </ul>
     </div>
   );
 };

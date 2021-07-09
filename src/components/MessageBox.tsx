@@ -68,8 +68,8 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     margin-right: 0px;
   `;
 
-  return (
-    <div css={box}>
+  const hideButtons = () => {
+    return (
       <div css={top}>
         <div css={head}>
           <div css={check}>
@@ -77,7 +77,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
               <Arrow size={'8px'} rotate={90} />
             </div>
 
-            <span onClick={() => setView('Discover')}>To checklist </span>
+            <span onClick={() => setView('Discover')}> To checklist </span>
           </div>
         </div>
 
@@ -88,6 +88,12 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
           </div>
         </div>
       </div>
+    );
+  };
+
+  return (
+    <div css={box}>
+      {hideButtons()}
       {view === 'welcome' && <Welcome />}
       {view === 'Discover' && <Discover />}
     </div>

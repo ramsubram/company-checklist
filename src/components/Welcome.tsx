@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import Logo from './Logo';
-import { FC } from 'react';
 
 const find_candidates = css`
   height: 40px;
