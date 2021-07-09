@@ -69,26 +69,36 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   `;
 
   const hideButtons = () => {
-    return (
-      <div css={top}>
-        <div css={head}>
-          <div css={check}>
-            <div css={less_than}>
-              <Arrow size={'8px'} rotate={90} />
-            </div>
+    if (view === 'welcome') {
+      return (
+        <div css={top}>
+          <div css={head}>
+            <div css={check}>
+              <div css={less_than}>
+                <Arrow size={'8px'} rotate={90} />
+              </div>
 
-            <span onClick={() => setView('Discover')}> To checklist </span>
+              <span onClick={() => setView('Discover')}> To checklist </span>
+            </div>
+          </div>
+
+          <div onClick={() => onHide()} css={hide}>
+            <span>Hide</span>
+            <div css={arrow}>
+              <Arrow size={'7px'} />
+            </div>
           </div>
         </div>
-
-        <div onClick={() => onHide()} css={hide}>
-          <span>Hide</span>
+      );
+    } else {
+      return (
+        <div>
           <div css={arrow}>
             <Arrow size={'7px'} />
           </div>
         </div>
-      </div>
-    );
+      );
+    }
   };
 
   return (
