@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { FC } from 'react';
 
 const h1 = css`
   margin-bottom: 0;
@@ -14,7 +15,7 @@ const ul = css`
 `;
 
 const container = css`
-  background-color: green;
+  background: green;
 `;
 
 const Discover = () => {

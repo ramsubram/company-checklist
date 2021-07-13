@@ -1,5 +1,4 @@
 import './index.css';
-import Button from './components/Button';
 import Checklist from './components/Checklist';
 
 const App = () => {
