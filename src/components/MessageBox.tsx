@@ -37,6 +37,15 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     margin-left: 5px;
     margin-top: 7px;
   `;
+  const arrow_down = css`
+    transform: rotate(360deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5px;
+    margin-top: 7px;
+    cursor: pointer;
+  `;
 
   const less_than = css`
     display: flex;
@@ -93,8 +102,8 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     } else {
       return (
         <div>
-          <div css={arrow}>
-            <Arrow size={'7px'} />
+          <div css={arrow_down}>
+            <Arrow size={'8px'} />
           </div>
         </div>
       );

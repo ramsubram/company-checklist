@@ -1,5 +1,7 @@
-import { FC } from 'react';
-import Arrow from './Arrow';
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+
+const h1 = css``;
 
 const Discover = () => {
   return (
