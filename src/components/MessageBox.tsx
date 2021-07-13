@@ -102,7 +102,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     } else {
       return (
         <div>
-          <div css={arrow_down}>
+          <div onClick={() => onHide()} css={arrow_down}>
             <Arrow size={'8px'} />
           </div>
         </div>
