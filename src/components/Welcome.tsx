@@ -74,7 +74,7 @@ const Welcome = () => {
       </div>
 
       <div css={find_candidates_row}>
-        <a css={anchor} href="https://wa.works/company">
+        <a css={anchor} target="_blank" href="https://wa.works/company">
           <div css={find_candidates}>
             <section>Find candidates</section>
           </div>
