@@ -11,19 +11,22 @@ const h1 = css`
 
 const container = css`
   display: flex;
-  flex-direction: column;
-  padding-left: 35px;
+  flex-direction: row;
+  margin-left: 74px;
   margin-bottom: 12px;
+  margin-top: 20px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
+  padding-right: 20px;
 `;
 
 const checkmark = css`
   display: flex;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  margin-right: 27px;
+  height: 20px;
+  width: 20px;
   background-color: #26a859;
 `;
 
@@ -33,19 +36,19 @@ const Discover = () => {
       <h1 css={h1}>Discover your next coworker</h1>
       <div>
         <label className="container" css={container}>
+          <input type="checkbox" />
+          <span className="checkmark" css={checkmark}></span>
           Upload logo
-          <input type="checkbox" />
-          <span css={checkmark}></span>
         </label>
         <label className="container" css={container}>
+          <input type="checkbox" />
+          <span className="checkmark" css={checkmark}></span>
           Add description
-          <input type="checkbox" />
-          <span css={checkmark}></span>
         </label>
         <label className="container" css={container}>
-          Upgrade
           <input type="checkbox" />
-          <span css={checkmark}></span>
+          <span className="checkmark" css={checkmark}></span>
+          Upgrade
         </label>
       </div>
     </div>
