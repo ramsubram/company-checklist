@@ -30,6 +30,47 @@ const checkmark = css`
   background-color: #26a859;
 `;
 
+const progressbar = css`
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  width: 95%;
+  background: #129999;
+  border-radius: 5px;
+  margin-top: 70px;
+  margin-left: 12px;
+  position: relative;
+`;
+
+const percent = css`
+  color: black;
+  padding-top: 4px;
+  padding-left: 8px;
+`;
+
+const vl = css`
+  border-left: 3px solid white;
+  height: 40px;
+  position: relative;
+  left: 1%;
+  margin-left: 3px;
+`;
+const vl2 = css`
+  border-left: 3px solid white;
+  height: 40px;
+  position: relative;
+  left: 87%;
+  margin-left: 3px;
+`;
+
+const vl3 = css`
+  border-left: 3px solid white;
+  height: 40px;
+  position: relative;
+  left: 25%;
+  margin-left: 3px;
+`;
+
 const Discover = () => {
   return (
     <div>
@@ -50,6 +91,14 @@ const Discover = () => {
           <span className="checkmark" css={checkmark}></span>
           Upgrade
         </label>
+      </div>
+      <div>
+        <div css={progressbar}>
+          <div css={vl}></div>
+          <div css={percent}>100%</div>
+          <div css={vl2}></div>
+          <div css={vl3}></div>
+        </div>
       </div>
     </div>
   );
