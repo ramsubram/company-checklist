@@ -31,8 +31,6 @@ const checkmark = css`
 `;
 
 const progressbar = css`
-  display: flex;
-  flex-direction: row;
   height: 30px;
   width: 95%;
   background: #129999;
@@ -46,9 +44,17 @@ const percent = css`
   color: black;
   padding-top: 4px;
   padding-left: 8px;
+  position: absolute;
 `;
 
-const vl = css`
+const mybar = css`
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+`;
+
+const vl1 = css`
   border-left: 3px solid white;
   height: 40px;
   position: relative;
@@ -59,7 +65,7 @@ const vl2 = css`
   border-left: 3px solid white;
   height: 40px;
   position: relative;
-  left: 87%;
+  left: 1%;
   margin-left: 3px;
 `;
 
@@ -67,8 +73,30 @@ const vl3 = css`
   border-left: 3px solid white;
   height: 40px;
   position: relative;
-  left: 25%;
-  margin-left: 3px;
+  padding-right: 10px;
+`;
+
+const line_container = css`
+  display: flex;
+  flex-grow: 1;
+`;
+
+const last_line = css`
+  flex-direction: row-reverse;
+`;
+
+const elements = css`
+  display: flex;
+  flex-direction: column;
+`;
+
+const img = css`
+  width: 20px;
+  height: 20px;
+`;
+const img2 = css`
+  width: 20px;
+  height: 20px;
 `;
 
 const Discover = () => {
@@ -94,10 +122,22 @@ const Discover = () => {
       </div>
       <div>
         <div css={progressbar}>
-          <div css={vl}></div>
-          <div css={percent}>100%</div>
-          <div css={vl2}></div>
-          <div css={vl3}></div>
+          <div css={mybar}>
+            <div css={line_container}>
+              <div css={elements}>
+                <div css={vl1}></div>
+                <img css={img} src="/yellow_key.png" alt="" />
+              </div>
+            </div>
+            <div css={line_container}>
+              <div css={vl2}></div>
+              <img css={img2} src="/yellow_key.png" alt="" />
+            </div>
+            <div css={[line_container, last_line]}>
+              <div css={vl3}></div>
+            </div>
+            <div css={percent}>100%</div>
+          </div>
         </div>
       </div>
     </div>
