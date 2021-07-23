@@ -47,3 +47,7 @@ code {
 .container input:checked ~ .checkmark:after {
   display: flex;
 }
+
+.container input:checked ~ .checkmark {
+  background-color: #26a859;
+}

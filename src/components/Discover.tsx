@@ -2,9 +2,8 @@
 import { css } from '@emotion/react';
 
 const h1 = css`
-  margin-bottom: 0;
   margin-top: 30px;
-  margin-left: 70px;
+  padding-left: 70px;
   font-size: 30px;
   font-family: 'Lobster Two', cursive;
 `;
@@ -12,7 +11,8 @@ const h1 = css`
 const container = css`
   display: flex;
   flex-direction: row;
-  margin-left: 74px;
+  padding-left: 74px;
+  margin-left: 0;
   margin-bottom: 12px;
   margin-top: 20px;
   cursor: pointer;
@@ -27,17 +27,22 @@ const checkmark = css`
   margin-right: 27px;
   height: 20px;
   width: 20px;
-  background-color: #26a859;
+  border: 0.1em solid #26a859;
 `;
 
 const progressbar = css`
   height: 30px;
-  width: 95%;
+  width: 90%;
   background: #129999;
   border-radius: 5px;
   margin-top: 70px;
-  margin-left: 12px;
-  position: relative;
+  position: absolute;
+`;
+
+const progress_content = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 const percent = css`
@@ -58,7 +63,7 @@ const vl1 = css`
   border-left: 3px solid white;
   height: 40px;
   position: relative;
-  left: 1%;
+  left: 2%;
   margin-left: 3px;
 `;
 const vl2 = css`
@@ -90,18 +95,32 @@ const elements = css`
   flex-direction: column;
 `;
 
-const img = css`
+const key = css`
   width: 20px;
   height: 20px;
+  padding-top: 10px;
+  padding-right: 29px;
 `;
-const img2 = css`
-  width: 20px;
-  height: 20px;
+// const img2 = css`
+//   width: 100%;
+//   width: 20px;
+//   height: 20px;
+//   margin-top: 39px;
+// `;
+// const img3 = css`
+//   width: 20px;
+//   height: 20px;
+//   margin-top: 42px;
+// `;
+
+const box = css`
+  margin: 0px;
+  padding: 0px;
 `;
 
 const Discover = () => {
   return (
-    <div>
+    <div css={box}>
       <h1 css={h1}>Discover your next coworker</h1>
       <div>
         <label className="container" css={container}>
@@ -120,21 +139,22 @@ const Discover = () => {
           Upgrade
         </label>
       </div>
-      <div>
+      <div css={progress_content}>
         <div css={progressbar}>
           <div css={mybar}>
             <div css={line_container}>
               <div css={elements}>
                 <div css={vl1}></div>
-                <img css={img} src="/yellow_key.png" alt="" />
+                <img css={key} src="/yellow_key.png" alt="" />
               </div>
             </div>
             <div css={line_container}>
               <div css={vl2}></div>
-              <img css={img2} src="/yellow_key.png" alt="" />
+              <img css={key} src="/yellow_key.png" alt="" />
             </div>
             <div css={[line_container, last_line]}>
               <div css={vl3}></div>
+              <img css={key} src="/yellow_key.png" alt="" />
             </div>
             <div css={percent}>100%</div>
           </div>
