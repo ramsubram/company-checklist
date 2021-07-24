@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { useState } from 'react';
 
 const h1 = css`
   margin-top: 30px;
@@ -33,7 +34,7 @@ const checkmark = css`
 const progressbar = css`
   height: 30px;
   width: 90%;
-  background: #129999;
+  background: #f3f3f3;
   border-radius: 5px;
   margin-top: 70px;
   position: absolute;
@@ -48,7 +49,7 @@ const progress_content = css`
 const percent = css`
   color: black;
   padding-top: 4px;
-  padding-left: 8px;
+  padding-left: 14px;
   position: absolute;
 `;
 
@@ -59,40 +60,12 @@ const mybar = css`
   width: 100%;
 `;
 
-const vl1 = css`
+const vl = css`
   border-left: 3px solid white;
   height: 40px;
   position: relative;
   left: 2%;
   margin-left: 3px;
-`;
-const vl2 = css`
-  border-left: 3px solid white;
-  height: 40px;
-  position: relative;
-  left: 1%;
-  margin-left: 3px;
-`;
-
-const vl3 = css`
-  border-left: 3px solid white;
-  height: 40px;
-  position: relative;
-  padding-right: 10px;
-`;
-
-const line_container = css`
-  display: flex;
-  flex-grow: 1;
-`;
-
-const last_line = css`
-  flex-direction: row-reverse;
-`;
-
-const elements = css`
-  display: flex;
-  flex-direction: column;
 `;
 
 const key = css`
@@ -101,17 +74,29 @@ const key = css`
   padding-top: 10px;
   padding-right: 29px;
 `;
-// const img2 = css`
-//   width: 100%;
-//   width: 20px;
-//   height: 20px;
-//   margin-top: 39px;
-// `;
-// const img3 = css`
-//   width: 20px;
-//   height: 20px;
-//   margin-top: 42px;
-// `;
+
+const line_container1 = css`
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  position: absolute;
+  left: 1px;
+`;
+
+const line_container2 = css`
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  position: absolute;
+  margin-left: 180px;
+`;
+const line_container3 = css`
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  position: absolute;
+  right: -37px;
+`;
 
 const box = css`
   margin: 0px;
@@ -119,6 +104,8 @@ const box = css`
 `;
 
 const Discover = () => {
+  const [score, setScore] = useState<Number>(0);
+
   return (
     <div css={box}>
       <h1 css={h1}>Discover your next coworker</h1>
@@ -142,21 +129,20 @@ const Discover = () => {
       <div css={progress_content}>
         <div css={progressbar}>
           <div css={mybar}>
-            <div css={line_container}>
-              <div css={elements}>
-                <div css={vl1}></div>
-                <img css={key} src="/yellow_key.png" alt="" />
-              </div>
-            </div>
-            <div css={line_container}>
-              <div css={vl2}></div>
+            <div css={line_container1}>
+              <div css={vl}></div>
               <img css={key} src="/yellow_key.png" alt="" />
             </div>
-            <div css={[line_container, last_line]}>
-              <div css={vl3}></div>
+            <div css={line_container2}>
+              <div css={vl}></div>
               <img css={key} src="/yellow_key.png" alt="" />
             </div>
-            <div css={percent}>100%</div>
+
+            <div css={line_container3}>
+              <div css={vl}></div>
+              <img css={key} src="/yellow_key.png" alt="" />
+            </div>
+            <div css={percent}>{`${score} %`}</div>
           </div>
         </div>
       </div>
