@@ -46,7 +46,7 @@ const progress_content = css`
   justify-content: center;
 `;
 
-const percent = css`
+const prcnt = css`
   color: black;
   padding-top: 4px;
   padding-left: 14px;
@@ -104,7 +104,25 @@ const box = css`
 `;
 
 const Discover = () => {
-  const [score, setScore] = useState<Number>(0);
+  const [checkbox1, setCheckbox1] = useState<Boolean>(false);
+  const [checkbox2, setCheckbox2] = useState<Boolean>(false);
+  const [checkbox3, setCheckbox3] = useState<Boolean>(false);
+
+  const checkboxes = [checkbox1, checkbox2, checkbox3];
+  const activeCheckboxes = checkboxes.filter((x) => x);
+  const percent = Math.round(
+    (100 / checkboxes.length) * activeCheckboxes.length
+  );
+
+  const checkBox1 = () => {
+    setCheckbox1(true);
+  };
+  const checkBox2 = () => {
+    setCheckbox2(true);
+  };
+  const checkBox3 = () => {
+    setCheckbox3(true);
+  };
 
   return (
     <div css={box}>
@@ -112,17 +130,29 @@ const Discover = () => {
       <div>
         <label className="container" css={container}>
           <input type="checkbox" />
-          <span className="checkmark" css={checkmark}></span>
+          <span
+            onClick={checkBox1}
+            className="checkmark"
+            css={checkmark}
+          ></span>
           Upload logo
         </label>
         <label className="container" css={container}>
           <input type="checkbox" />
-          <span className="checkmark" css={checkmark}></span>
+          <span
+            onClick={checkBox2}
+            className="checkmark"
+            css={checkmark}
+          ></span>
           Add description
         </label>
         <label className="container" css={container}>
           <input type="checkbox" />
-          <span className="checkmark" css={checkmark}></span>
+          <span
+            onClick={checkBox3}
+            className="checkmark"
+            css={checkmark}
+          ></span>
           Upgrade
         </label>
       </div>
@@ -142,7 +172,7 @@ const Discover = () => {
               <div css={vl}></div>
               <img css={key} src="/yellow_key.png" alt="" />
             </div>
-            <div css={percent}>{`${score} %`}</div>
+            <div css={prcnt}>{` ${percent}%`}</div>
           </div>
         </div>
       </div>
