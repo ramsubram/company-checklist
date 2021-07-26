@@ -129,30 +129,18 @@ const Discover = () => {
       <h1 css={h1}>Discover your next coworker</h1>
       <div>
         <label className="container" css={container}>
-          <input type="checkbox" />
-          <span
-            onClick={checkBox1}
-            className="checkmark"
-            css={checkmark}
-          ></span>
+          <input onClick={checkBox1} type="checkbox" />
+          <span className="checkmark" css={checkmark}></span>
           Upload logo
         </label>
         <label className="container" css={container}>
-          <input type="checkbox" />
-          <span
-            onClick={checkBox2}
-            className="checkmark"
-            css={checkmark}
-          ></span>
+          <input onClick={checkBox2} type="checkbox" />
+          <span className="checkmark" css={checkmark}></span>
           Add description
         </label>
         <label className="container" css={container}>
-          <input type="checkbox" />
-          <span
-            onClick={checkBox3}
-            className="checkmark"
-            css={checkmark}
-          ></span>
+          <input onClick={checkBox3} type="checkbox" />
+          <span className="checkmark" css={checkmark}></span>
           Upgrade
         </label>
       </div>
