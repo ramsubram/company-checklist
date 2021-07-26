@@ -115,13 +115,13 @@ const Discover = () => {
   );
 
   const checkBox1 = () => {
-    setCheckbox1(true);
+    checkbox1 === false ? setCheckbox1(!checkbox1) : setCheckbox1(false);
   };
   const checkBox2 = () => {
-    setCheckbox2(true);
+    checkbox2 === false ? setCheckbox2(!checkbox2) : setCheckbox2(false);
   };
   const checkBox3 = () => {
-    setCheckbox3(true);
+    checkbox3 === false ? setCheckbox3(!checkbox3) : setCheckbox3(false);
   };
 
   return (
