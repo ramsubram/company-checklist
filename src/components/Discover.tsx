@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const h1 = css`
   margin-top: 30px;
@@ -75,29 +75,6 @@ const key = css`
   padding-right: 29px;
 `;
 
-const line_container1 = css`
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  position: absolute;
-  left: 1px;
-`;
-
-const line_container2 = css`
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  position: absolute;
-  margin-left: 180px;
-`;
-const line_container3 = css`
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  position: absolute;
-  right: -37px;
-`;
-
 const box = css`
   margin: 0px;
   padding: 0px;
@@ -110,18 +87,72 @@ const Discover = () => {
 
   const checkboxes = [checkbox1, checkbox2, checkbox3];
   const activeCheckboxes = checkboxes.filter((x) => x);
-  const percent = Math.round(
+  const percent = Math.floor(
     (100 / checkboxes.length) * activeCheckboxes.length
   );
 
+  const light_teal = percent >= 33 ? '#52cbcc' : '#FFFFFF';
+  const teal1 = percent >= 66 ? '#2DA3A3' : '#FFFFFF';
+  const teal2 = percent === 100 ? '#2DA3A3' : '#FFFFFF';
+
+  const line_container1 = css`
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background: ${light_teal};
+    height: 30px;
+    border-radius: 5px 0px 0px 5px;
+    position: relative;
+  `;
+
+  const line_container2 = css`
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    flex-direction: column;
+    background: ${teal1};
+  `;
+
+  const line_container3 = css`
+    display: flex;
+    flex-grow: 1;
+    background: ${teal2};
+    border-radius: 0px 5px 5px 0px;
+    flex-direction: row-reverse;
+  `;
+
+  const mini_container1 = css`
+    position: absolute;
+    left: 2px;
+  `;
+
+  const mini_container2 = css`
+    position: absolute;
+    left: -14px;
+  `;
+  const mini_container3 = css`
+    position: absolute;
+    width: 0px;
+    display: flex;
+    right: 15px;
+    flex-direction: column;
+  `;
+
   const checkBox1 = () => {
-    checkbox1 === false ? setCheckbox1(!checkbox1) : setCheckbox1(false);
+    console.log(checkbox1);
+    setCheckbox1(!checkbox1);
   };
+
+  useEffect(() => {
+    console.log(checkbox1);
+  }, [checkbox1]);
+
   const checkBox2 = () => {
-    checkbox2 === false ? setCheckbox2(!checkbox2) : setCheckbox2(false);
+    setCheckbox2(!checkbox2);
   };
+
   const checkBox3 = () => {
-    checkbox3 === false ? setCheckbox3(!checkbox3) : setCheckbox3(false);
+    setCheckbox3(!checkbox3);
   };
 
   return (
@@ -148,19 +179,26 @@ const Discover = () => {
         <div css={progressbar}>
           <div css={mybar}>
             <div css={line_container1}>
-              <div css={vl}></div>
-              <img css={key} src="/yellow_key.png" alt="" />
+              <div css={mini_container1}>
+                <div css={vl}></div>
+                <img css={key} src="/yellow_key.png" alt="" />
+              </div>
             </div>
+
             <div css={line_container2}>
-              <div css={vl}></div>
-              <img css={key} src="/yellow_key.png" alt="" />
+              <div css={mini_container2}>
+                <div css={vl}></div>
+                <img css={key} src="/yellow_key.png" alt="" />
+              </div>
             </div>
 
             <div css={line_container3}>
-              <div css={vl}></div>
-              <img css={key} src="/yellow_key.png" alt="" />
+              <div css={mini_container3}>
+                <div css={vl}></div>
+                <img css={key} src="/yellow_key.png" alt="" />
+              </div>
             </div>
-            <div css={prcnt}>{` ${percent}%`}</div>
+            <div css={prcnt}>{`${percent}%`}</div>
           </div>
         </div>
       </div>

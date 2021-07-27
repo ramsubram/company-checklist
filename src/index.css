@@ -14,12 +14,7 @@ code {
 }
 
 .container input {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+  display: none;
 }
 
 .container .checkmark:after {
