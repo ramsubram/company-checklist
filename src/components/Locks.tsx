@@ -4,39 +4,57 @@ import { useEffect, useState } from 'react';
 
 const lock = css`
   width: 15px;
-  height: 20px;
-  padding-top: 10px;
-  padding-right: 29px;
+  height: 19px;
+  padding-right: 5px;
 `;
-const all_lock = css`
+const container = css`
   display: flex;
+  flex-direction: row;
   justify-content: center;
 `;
 
 const text = css`
-  font-size: 12px;
+  font-size: 11px;
+  color: #52cbcc;
+  padding-top: 4px;
+  padding-left: 2px;
 `;
 
-<div css={all_lock}>
-  <div>
-    <img css={lock} src="/keylock_locked.png" alt="" />
-    <div css={text}>
-      <p>Free interviews Pay per hire</p>
+const wrapper = css`
+  display: flex;
+  flex-direction: row;
+  margin: 3px;
+  margin-top: 30px;
+  padding: 12px;
+`;
+
+const Locks = () => {
+  return (
+    <div css={container}>
+      <div css={wrapper}>
+        <img css={lock} src="/keylock_locked.png" alt="" />
+        <div css={text}>
+          <div>Free interviews</div>
+          <div>Pay per hire</div>
+        </div>
+      </div>
+      <div css={wrapper}>
+        <img css={lock} src="/keylock_locked.png" alt="" />
+        <div css={text}>
+          <div>Poke from users</div>
+        </div>
+      </div>
+      <div css={wrapper}>
+        <img css={lock} src="/keylock_locked.png" alt="" />
+        <div css={text}>
+          <div>Access to contact info</div>
+          <div>Publish job listings</div>
+          <div>Poke Anonymous</div>
+          <div>Unlimited free hires</div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div>
-    <img css={lock} src="/keylock_locked.png" alt="" />
-    <div>
-      <p>Poke from userse</p>
-    </div>
-  </div>
-  <div>
-    <img css={lock} src="/keylock_locked.png" alt="" />
-    <div>
-      <p>Access to contact info</p>
-      <p>Publish job listings</p>
-      <p>Poke Anonymous</p>
-      <p>Unlimited free hires</p>
-    </div>
-  </div>
-</div>;
+  );
+};
+
+export default Locks;

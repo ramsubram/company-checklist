@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
+import Locks from './Locks';
 
 const h1 = css`
   margin-top: 24px;
@@ -12,8 +13,8 @@ const h1 = css`
 const container = css`
   display: flex;
   flex-direction: row;
-  padding-left: 30px;
-  margin-bottom: 12px;
+  padding-left: 25px;
+  margin-bottom: 10px;
   margin-top: 20px;
   cursor: pointer;
   font-size: 14px;
@@ -24,7 +25,7 @@ const checkmark = css`
   display: flex;
   top: 0;
   left: 0;
-  margin-right: 15px;
+  margin-right: 12px;
   height: 12px;
   width: 12px;
   border: 0.1em solid #26a859;
@@ -43,7 +44,7 @@ const progress_content = css`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 46px;
+  padding-top: 23px;
 `;
 
 const prcnt = css`
@@ -76,17 +77,6 @@ const key = css`
   padding-right: 29px;
 `;
 
-const lock = css`
-  width: 15px;
-  height: 20px;
-  padding-top: 10px;
-  padding-right: 29px;
-`;
-const all_lock = css`
-  display: flex;
-  justify-content: center;
-`;
-
 const box = css`
   margin: 0px;
   padding: 0px;
@@ -113,7 +103,7 @@ const Discover = () => {
     flex-direction: column;
     background: ${light_teal};
     height: ${progressbar_height};
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 3px 0px 0px 3px;
     position: relative;
   `;
 
@@ -129,7 +119,7 @@ const Discover = () => {
     display: flex;
     flex-grow: 1;
     background: ${teal2};
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 0px 3px 3px 0px;
     flex-direction: row-reverse;
   `;
 
@@ -193,24 +183,28 @@ const Discover = () => {
             <div css={line_container1}>
               <div css={mini_container1}>
                 <div css={vl}></div>
+                <img css={key} src="/yellow_key.png" alt="" />
               </div>
             </div>
 
             <div css={line_container2}>
               <div css={mini_container2}>
                 <div css={vl}></div>
+                <img css={key} src="/yellow_key.png" alt="" />
               </div>
             </div>
 
             <div css={line_container3}>
               <div css={mini_container3}>
                 <div css={vl}></div>
+                <img css={key} src="/yellow_key.png" alt="" />
               </div>
             </div>
             <div css={prcnt}>{`${percent}%`}</div>
           </div>
         </div>
       </div>
+      <Locks />
     </div>
   );
 };

@@ -13,8 +13,8 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     display: flex;
     flex-direction: column;
     color: white;
-    width: 430px;
-    height: 332px;
+    width: 456px;
+    height: 371px;
     padding: 12px 12px 12px 12px;
     position: fixed;
     bottom: 20px;
