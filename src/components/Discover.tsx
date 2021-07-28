@@ -63,7 +63,7 @@ const mybar = css`
 `;
 
 const vl = css`
-  border-left: 3px solid white;
+  border-left: 2px solid white;
   height: 36px;
   position: relative;
   left: 2%;
@@ -204,7 +204,7 @@ const Discover = () => {
           </div>
         </div>
       </div>
-      <Locks />
+      <Locks percent={percent} />
     </div>
   );
 };
