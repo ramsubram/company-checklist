@@ -18,10 +18,9 @@ code {
 }
 
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
+  margin: auto;
   width: 5px;
-  height: 10px;
+  height: 70%;
   border: solid white;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
@@ -41,6 +40,7 @@ code {
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
   display: flex;
+  padding-bottom: 2px;
 }
 
 .container input:checked ~ .checkmark {
