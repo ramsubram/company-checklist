@@ -2,17 +2,8 @@
 import { css } from '@emotion/react';
 import Logo from './Logo';
 
-const find_candidates = css`
-  height: 40px;
-  width: 150px;
-  background-color: #2aa859;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
-`;
-
 const container_info = css`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -34,6 +25,22 @@ const find_candidates_row = css`
   font-size: 14px;
 `;
 
+const fc_container = css`
+  display: flex;
+  flex-direction: column-reverse;
+  flex-grow: 1;
+`;
+
+const find_candidates = css`
+  height: 40px;
+  width: 150px;
+  background-color: #2aa859;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+`;
+
 const h1 = css`
   margin-bottom: 0;
   margin-top: 20px;
@@ -45,7 +52,6 @@ const h1 = css`
 const p = css`
   max-width: 400px;
   margin-top: 3px;
-  margin-bottom: 100px;
   font-size: 14px;
 `;
 
@@ -75,8 +81,10 @@ const Welcome = () => {
 
       <div css={find_candidates_row}>
         <a css={anchor} target="_blank" href="https://wa.works/company">
-          <div css={find_candidates}>
-            <section>Find candidates</section>
+          <div css={fc_container}>
+            <div css={find_candidates}>
+              <section>Find candidates</section>
+            </div>
           </div>
         </a>
       </div>

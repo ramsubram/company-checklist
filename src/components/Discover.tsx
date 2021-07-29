@@ -2,6 +2,7 @@
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import Locks from './Locks';
+import Thanks from './Thanks';
 
 const h1 = css`
   margin-top: 24px;

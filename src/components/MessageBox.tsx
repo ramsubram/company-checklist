@@ -60,6 +60,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     flex-direction: row;
     justify-content: center;
     cursor: pointer;
+    font-size: 12px;
   `;
 
   const hide = css`
@@ -67,6 +68,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     flex-direction: row;
     justify-content: center;
     margin-left: 5px;
+    font-size: 12px;
     cursor: pointer;
     width: 50px;
   `;

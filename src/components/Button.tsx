@@ -16,8 +16,8 @@ const button = css`
   border-radius: 25px;
   background-color: #262f3a;
   color: white;
-  height: 35px;
-  font-size: 14px;
+  height: 30px;
+  font-size: 12px;
   cursor: pointer;
   position: fixed;
   bottom: 20px;
@@ -25,7 +25,7 @@ const button = css`
   right: 20px;
   flex-direction: column;
 
-  min-width: 150px;
+  min-width: 140px;
   justify-content: center;
   font-family: ubuntu, sans-serif;
 `;
