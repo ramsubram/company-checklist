@@ -3,13 +3,13 @@ import { css } from '@emotion/react';
 import Logo from './Logo';
 
 const container_info = css`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
+  margin-top: 30px;
   flex-grow: 1;
-  padding-top: 30px;
+  padding: 20px;
 `;
 
 const image = css`
@@ -20,15 +20,12 @@ const image = css`
 
 const find_candidates_row = css`
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   justify-content: center;
   font-size: 14px;
-`;
-
-const fc_container = css`
-  display: flex;
-  flex-direction: column-reverse;
   flex-grow: 1;
+  align-items: center;
+  justify-content: end;
 `;
 
 const find_candidates = css`
@@ -81,11 +78,7 @@ const Welcome = () => {
 
       <div css={find_candidates_row}>
         <a css={anchor} target="_blank" href="https://wa.works/company">
-          <div css={fc_container}>
-            <div css={find_candidates}>
-              <section>Find candidates</section>
-            </div>
-          </div>
+          <div css={find_candidates}>Find candidates</div>
         </a>
       </div>
     </div>
