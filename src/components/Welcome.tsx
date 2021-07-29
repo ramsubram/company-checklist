@@ -29,8 +29,8 @@ const find_candidates_row = css`
 `;
 
 const find_candidates = css`
-  height: 40px;
-  width: 150px;
+  height: 34px;
+  width: 154px;
   background-color: #2aa859;
   display: flex;
   flex-direction: column;
