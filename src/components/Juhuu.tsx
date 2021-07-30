@@ -7,7 +7,11 @@ interface Props {
 }
 
 const Juhuu = () => {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <h1>Juhuu Ready for pokes</h1>
+    </div>
+  );
 };
 
 export default Juhuu;

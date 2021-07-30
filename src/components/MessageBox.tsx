@@ -105,8 +105,44 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
       );
     } else if (view === 'Juhuu') {
       return (
-        <div css={less_than}>
-          <Arrow size={'8px'} rotate={90} />
+        <div css={top}>
+          <div css={head}>
+            <div css={check}>
+              <div css={less_than}>
+                <Arrow size={'8px'} rotate={90} />
+              </div>
+
+              <span onClick={() => setView('Discover')}> Back </span>
+            </div>
+          </div>
+
+          <div onClick={() => onHide()} css={hide}>
+            <span>Hide</span>
+            <div css={arrow}>
+              <Arrow size={'7px'} />
+            </div>
+          </div>
+        </div>
+      );
+    } else if (view === 'Thanks') {
+      return (
+        <div css={top}>
+          <div css={head}>
+            <div css={check}>
+              <div css={less_than}>
+                <Arrow size={'8px'} rotate={90} />
+              </div>
+
+              <span onClick={() => setView('Discover')}> Back</span>
+            </div>
+          </div>
+
+          <div onClick={() => onHide()} css={hide}>
+            <span>Hide</span>
+            <div css={arrow}>
+              <Arrow size={'7px'} />
+            </div>
+          </div>
         </div>
       );
     } else {
@@ -120,11 +156,19 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     }
   };
 
+  const display = css`
+    display: ${view !== 'Discover' ? 'none' : 'block'};
+  `;
+
   return (
     <div css={box}>
       {hideButtons()}
       {view === 'welcome' && <Welcome />}
-      {view === 'Discover' && <Discover setView={setView} />}
+
+      <div css={display}>
+        <Discover setView={setView} />
+      </div>
+
       {view === 'Juhuu' && <Juhuu />}
       {view === 'Thanks' && <Thanks />}
     </div>

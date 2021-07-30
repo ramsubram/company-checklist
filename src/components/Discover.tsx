@@ -87,9 +87,13 @@ const box = css`
 `;
 
 const Discover = ({ setView }: Props) => {
+  console.log('Discover');
+
   const [checkbox1, setCheckbox1] = useState<Boolean>(false);
   const [checkbox2, setCheckbox2] = useState<Boolean>(false);
   const [checkbox3, setCheckbox3] = useState<Boolean>(false);
+  const [statement, setStatement] = useState<Boolean>(false);
+  const [statement2, setStatement2] = useState<Boolean>(false);
 
   const checkboxes = [checkbox1, checkbox2, checkbox3];
   const activeCheckboxes = checkboxes.filter((x) => x);
@@ -101,8 +105,12 @@ const Discover = ({ setView }: Props) => {
   const teal1 = percent >= 66 ? '#2DA3A3' : 'transparent';
   const teal2 = percent === 100 ? '#2DA3A3' : '#FFFFFF';
 
-  if (percent >= 33) {
+  if (statement === false && percent === 33) {
     setView('Juhuu');
+    setStatement(true);
+  } else if (statement2 === false && percent === 100) {
+    setView('Thanks');
+    setStatement2(true);
   }
 
   const line_container1 = css`
