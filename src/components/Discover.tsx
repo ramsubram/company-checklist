@@ -2,8 +2,10 @@
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import Locks from './Locks';
-import Thanks from './Thanks';
-import Juhuu from './Juhuu';
+
+interface Props {
+  setView: Function;
+}
 
 const h1 = css`
   margin-top: 24px;
@@ -84,7 +86,7 @@ const box = css`
   padding: 0px;
 `;
 
-const Discover = () => {
+const Discover = ({ setView }: Props) => {
   const [checkbox1, setCheckbox1] = useState<Boolean>(false);
   const [checkbox2, setCheckbox2] = useState<Boolean>(false);
   const [checkbox3, setCheckbox3] = useState<Boolean>(false);
@@ -98,6 +100,10 @@ const Discover = () => {
   const light_teal = percent >= 33 ? '#52cbcc' : 'transparent';
   const teal1 = percent >= 66 ? '#2DA3A3' : 'transparent';
   const teal2 = percent === 100 ? '#2DA3A3' : '#FFFFFF';
+
+  if (percent >= 33) {
+    setView('Juhuu');
+  }
 
   const line_container1 = css`
     display: flex;

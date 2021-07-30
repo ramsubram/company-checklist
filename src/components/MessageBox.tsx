@@ -4,6 +4,8 @@ import Arrow from './Arrow';
 import { FC, useState } from 'react';
 import Welcome from './Welcome';
 import Discover from './Discover';
+import Juhuu from './Juhuu';
+import Thanks from './Thanks';
 
 const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const [view, setView] = useState<string>('welcome');
@@ -101,6 +103,12 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
           </div>
         </div>
       );
+    } else if (view === 'Juhuu') {
+      return (
+        <div css={less_than}>
+          <Arrow size={'8px'} rotate={90} />
+        </div>
+      );
     } else {
       return (
         <div>
@@ -116,7 +124,9 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     <div css={box}>
       {hideButtons()}
       {view === 'welcome' && <Welcome />}
-      {view === 'Discover' && <Discover />}
+      {view === 'Discover' && <Discover setView={setView} />}
+      {view === 'Juhuu' && <Juhuu />}
+      {view === 'Thanks' && <Thanks />}
     </div>
   );
 };
