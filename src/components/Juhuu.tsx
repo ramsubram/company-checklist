@@ -1,16 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import Arrow from './Arrow';
+import Container from './Container';
 
-interface Props {
-  lessThan: any;
-}
+const img = css`
+  height: 70px;
+  width: 80px;
+`;
 
 const Juhuu = () => {
   return (
-    <div>
-      <h1>Juhuu Ready for pokes</h1>
-    </div>
+    <Container
+      heading="Juhuu you're ready for pokes!"
+      logo={<img css={img} src="/unlock_party.png" />}
+      content="Pokes are the candidate's way of showing interest in your workplace."
+      button="Find canditates"
+    />
   );
 };
 

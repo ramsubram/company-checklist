@@ -1,16 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import Arrow from './Arrow';
+import Container from './Container';
+
+const img = css`
+  height: 70px;
+  width: 80px;
+`;
 
 const Thanks = () => {
   return (
-    <div>
-      <img src="/unlock_party.png" alt="" />
-
-      <h1>Thanks for upgrading</h1>
-
-      <button>Find next hire</button>
-    </div>
+    <Container
+      heading="Juhuu you're ready for pokes!"
+      logo={<img css={img} src="/unlock_party.png" />}
+      content="Pokes are the candidate's way of showing interest in your workplace."
+      button="Find canditates"
+    />
   );
 };
 

@@ -28,7 +28,7 @@ const find_candidates_row = css`
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
-  font-size: 14px;
+  font-size: 12px;
   flex-grow: 1;
   align-items: center;
   justify-content: end;
@@ -47,7 +47,7 @@ const find_candidates = css`
 const h1 = css`
   margin-bottom: 0;
   margin-top: 20px;
-  font-size: 30px;
+  font-size: 24px;
   font-family: 'Lobster Two', cursive;
   /* font-family: 'Sofia', cursive; */
 `;
