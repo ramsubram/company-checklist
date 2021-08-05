@@ -11,9 +11,7 @@ interface IProp {
 const container_info = css`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   text-align: center;
-  margin-top: 30px;
   flex-grow: 1;
   padding: 20px;
 `;
@@ -22,19 +20,20 @@ const image = css`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-bottom: 9px;
 `;
 
-const find_candidates_row = css`
+const btn_row = css`
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   font-size: 12px;
-  flex-grow: 1;
+  flex-grow: 2;
   align-items: center;
   justify-content: end;
 `;
 
-const find_candidates = css`
+const btn = css`
   height: 34px;
   width: 154px;
   background-color: #2aa859;
@@ -68,6 +67,7 @@ const Container = ({ heading, logo, content, button }: IProp) => {
     <div>
       <div css={container_info}>
         <div css={image}>{logo}</div>
+
         <h1 css={h1}> {heading} </h1>
         <div
           css={css`
@@ -78,9 +78,9 @@ const Container = ({ heading, logo, content, button }: IProp) => {
           <p css={p}>{content}</p>
         </div>
 
-        <div css={find_candidates_row}>
+        <div css={btn_row}>
           <a css={anchor} target="_blank" href="https://wa.works/company">
-            <div css={find_candidates}>{button}</div>
+            <div css={btn}>{button}</div>
           </a>
         </div>
       </div>
