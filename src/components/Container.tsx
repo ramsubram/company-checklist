@@ -14,6 +14,7 @@ const container_info = css`
   text-align: center;
   flex-grow: 1;
   padding: 20px;
+  height: 300px;
 `;
 
 const image = css`
@@ -23,20 +24,20 @@ const image = css`
   padding-bottom: 9px;
 `;
 
-const btn_row = css`
+const btn_column = css`
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   font-size: 12px;
-  flex-grow: 2;
   align-items: center;
   justify-content: end;
+  padding-bottom: 2px;
 `;
 
 const btn = css`
   height: 34px;
   width: 154px;
-  background-color: #2aa859;
+  background-color: #28a959;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +49,6 @@ const h1 = css`
   margin-top: 20px;
   font-size: 24px;
   font-family: 'Lobster Two', cursive;
-  /* font-family: 'Sofia', cursive; */
 `;
 
 const p = css`
@@ -60,6 +60,14 @@ const p = css`
 const anchor = css`
   text-decoration: none;
   color: white;
+`;
+
+const grow = css`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 80%;
+  height: 20px;
 `;
 
 const Container = ({ heading, logo, content, button }: IProp) => {
@@ -77,8 +85,9 @@ const Container = ({ heading, logo, content, button }: IProp) => {
         >
           <p css={p}>{content}</p>
         </div>
+        <div css={grow}></div>
 
-        <div css={btn_row}>
+        <div css={btn_column}>
           <a css={anchor} target="_blank" href="https://wa.works/company">
             <div css={btn}>{button}</div>
           </a>
