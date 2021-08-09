@@ -106,7 +106,7 @@ const Discover = ({ setView }: Props) => {
   const teal2 = percent === 100 ? '#2DA3A3' : '#FFFFFF';
 
   if (statement === false && percent === 33) {
-    setView('Uploaded');
+    setView('Upload');
     setStatement(true);
   } else if (statement2 === false && percent === 100) {
     setView('Thanks');

@@ -4,8 +4,13 @@ import Arrow from './Arrow';
 import { FC, useState } from 'react';
 import Welcome from './Welcome';
 import Discover from './Discover';
-import Uploaded from './Uploaded';
-import Thanks from './Thanks';
+import Logo from './Logo';
+import Container from './Container';
+import { workerData } from 'worker_threads';
+
+interface IProps {
+  id: any;
+}
 
 const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const [view, setView] = useState<string>('welcome');
@@ -81,6 +86,28 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     margin-right: 0px;
   `;
 
+  const ls = [
+    {
+      id: 'Upload',
+      heading: "Juhuu you're ready for pokes!",
+      logo: <Logo />,
+      content:
+        "Pokes are the candidate's way of showing interest in your workplace.",
+      button: 'Find canditates',
+    },
+    {
+      id: 'Thanks',
+      heading: 'Thanks for upgrading!',
+      logo: <Logo />,
+      content:
+        "You're now on the all" +
+        ' inclusice cruise ' +
+        ' where every feature and hire included.',
+      button: 'Find next hire',
+    },
+  ];
+
+  console.log(ls);
   const hideButtons = () => {
     if (view === 'welcome') {
       return (
@@ -103,7 +130,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
           </div>
         </div>
       );
-    } else if (view === 'Uploaded') {
+    } else if (view === 'Upload') {
       return (
         <div css={top}>
           <div css={head}>
@@ -160,6 +187,10 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     display: ${view !== 'Discover' ? 'none' : 'block'};
   `;
 
+  const viewBox = ({ id }: IProps) => {
+    return id;
+  };
+
   return (
     <div css={box}>
       {hideButtons()}
@@ -169,8 +200,17 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
         <Discover setView={setView} />
       </div>
 
-      {view === 'Uploaded' && <Uploaded />}
-      {view === 'Thanks' && <Thanks />}
+      {ls
+        .filter((item) => item.id === view)
+        .map((x, i) => (
+          <Container
+            key={i}
+            heading={x.heading}
+            logo={x.logo}
+            content={x.content}
+            button={x.button}
+          />
+        ))}
     </div>
   );
 };
