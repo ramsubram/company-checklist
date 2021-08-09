@@ -109,7 +109,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
 
   console.log(ls);
   const hideButtons = () => {
-    if (view === 'welcome') {
+    if (view === 'Upload' || view === 'Thanks' || view === 'welcome') {
       return (
         <div css={top}>
           <div css={head}>
@@ -118,49 +118,9 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
                 <Arrow size={'8px'} rotate={90} />
               </div>
 
-              <span onClick={() => setView('Discover')}> To checklist </span>
-            </div>
-          </div>
-
-          <div onClick={() => onHide()} css={hide}>
-            <span>Hide</span>
-            <div css={arrow}>
-              <Arrow size={'7px'} />
-            </div>
-          </div>
-        </div>
-      );
-    } else if (view === 'Upload') {
-      return (
-        <div css={top}>
-          <div css={head}>
-            <div css={check}>
-              <div css={less_than}>
-                <Arrow size={'8px'} rotate={90} />
-              </div>
-
-              <span onClick={() => setView('Discover')}> Back </span>
-            </div>
-          </div>
-
-          <div onClick={() => onHide()} css={hide}>
-            <span>Hide</span>
-            <div css={arrow}>
-              <Arrow size={'7px'} />
-            </div>
-          </div>
-        </div>
-      );
-    } else if (view === 'Thanks') {
-      return (
-        <div css={top}>
-          <div css={head}>
-            <div css={check}>
-              <div css={less_than}>
-                <Arrow size={'8px'} rotate={90} />
-              </div>
-
-              <span onClick={() => setView('Discover')}> Back</span>
+              <span onClick={() => setView('Discover')}>
+                {view === 'welcome' ? 'To checklist ' : 'Back'}
+              </span>
             </div>
           </div>
 
@@ -186,10 +146,6 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
   const display = css`
     display: ${view !== 'Discover' ? 'none' : 'block'};
   `;
-
-  const viewBox = ({ id }: IProps) => {
-    return id;
-  };
 
   return (
     <div css={box}>
