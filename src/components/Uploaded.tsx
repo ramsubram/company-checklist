@@ -2,7 +2,7 @@
 import Container from './Container';
 import Unlock from './Unlock';
 
-const Juhuu = () => {
+const Uploaded = () => {
   return (
     <Container
       heading="Juhuu you're ready for pokes!"
@@ -13,4 +13,4 @@ const Juhuu = () => {
   );
 };
 
-export default Juhuu;
+export default Uploaded;

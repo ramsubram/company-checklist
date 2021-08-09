@@ -44,4 +44,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
 # company-checklist
+
+A checklist app that have three checkboxes which triggers score from 0 - 100 % when clicked. The checklist container can be opened and closed. It will redirect to the main page of WA.Works when clicked on the green button.

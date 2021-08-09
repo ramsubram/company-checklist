@@ -4,7 +4,7 @@ import Arrow from './Arrow';
 import { FC, useState } from 'react';
 import Welcome from './Welcome';
 import Discover from './Discover';
-import Juhuu from './Juhuu';
+import Uploaded from './Uploaded';
 import Thanks from './Thanks';
 
 const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
@@ -103,7 +103,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
           </div>
         </div>
       );
-    } else if (view === 'Juhuu') {
+    } else if (view === 'Uploaded') {
       return (
         <div css={top}>
           <div css={head}>
@@ -169,7 +169,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
         <Discover setView={setView} />
       </div>
 
-      {view === 'Juhuu' && <Juhuu />}
+      {view === 'Uploaded' && <Uploaded />}
       {view === 'Thanks' && <Thanks />}
     </div>
   );

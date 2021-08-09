@@ -4,7 +4,7 @@ import Unlock from './Unlock';
 const Thanks = () => {
   return (
     <Container
-      heading="Juhuu you're ready for pokes!"
+      heading="Thanks for upgrading!"
       logo={<Unlock />}
       content="Pokes are the candidate's way of showing interest in your workplace."
       button="Find canditates"

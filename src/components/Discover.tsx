@@ -106,7 +106,7 @@ const Discover = ({ setView }: Props) => {
   const teal2 = percent === 100 ? '#2DA3A3' : '#FFFFFF';
 
   if (statement === false && percent === 33) {
-    setView('Juhuu');
+    setView('Uploaded');
     setStatement(true);
   } else if (statement2 === false && percent === 100) {
     setView('Thanks');
@@ -115,7 +115,7 @@ const Discover = ({ setView }: Props) => {
 
   const line_container1 = css`
     display: flex;
-    flex-grow: 1;
+    flex-grow: 1.3;
     flex-direction: column;
     background: ${light_teal};
     height: ${progressbar_height};
@@ -141,7 +141,7 @@ const Discover = ({ setView }: Props) => {
 
   const mini_container1 = css`
     position: absolute;
-    left: 2px;
+    left: 1px;
   `;
 
   const mini_container2 = css`
@@ -152,7 +152,7 @@ const Discover = ({ setView }: Props) => {
     position: absolute;
     width: 0px;
     display: flex;
-    right: 15px;
+    right: 11px;
     flex-direction: column;
   `;
 
