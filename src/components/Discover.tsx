@@ -44,9 +44,10 @@ const progressbar = css`
 
 const progress_content = css`
   display: flex;
+  flex-grow: 1;
   flex-direction: row;
   justify-content: center;
-  padding-top: 23px;
+  padding-top: 40px;
 `;
 
 const prcnt = css`
@@ -160,10 +161,6 @@ const Discover = ({ setView }: Props) => {
     flex-direction: column;
   `;
 
-  const text = css`
-    padding: 0;
-  `;
-
   const checkBox1 = () => {
     console.log(checkbox1);
     setCheckbox1(!checkbox1);
@@ -184,54 +181,50 @@ const Discover = ({ setView }: Props) => {
   return (
     <div css={box}>
       <h1 css={h1}>Discover your next coworker</h1>
-      <div css={text}>
-        <label className="container" css={container}>
-          <input onClick={checkBox1} type="checkbox" />
-          <span className="checkmark" css={checkmark}></span>
-          Upload logo
-        </label>
-        <label className="container" css={container}>
-          <input onClick={checkBox2} type="checkbox" />
-          <span className="checkmark" css={checkmark}></span>
-          Add description
-        </label>
-        <label className="container" css={container}>
-          <input onClick={checkBox3} type="checkbox" />
-          <span className="checkmark" css={checkmark}></span>
-          Upgrade
-        </label>
-      </div>
-      <div css={grow}>
-        <div css={progress_content}>
-          <div css={progressbar}>
-            <div css={mybar}>
-              <div css={line_container1}>
-                <div css={mini_container1}>
-                  <div css={vl}></div>
-                  <img css={key} src="/yellow_key.png" alt="" />
-                </div>
+      <label className="container" css={container}>
+        <input onClick={checkBox1} type="checkbox" />
+        <span className="checkmark" css={checkmark}></span>
+        Upload logo
+      </label>
+      <label className="container" css={container}>
+        <input onClick={checkBox2} type="checkbox" />
+        <span className="checkmark" css={checkmark}></span>
+        Add description
+      </label>
+      <label className="container" css={container}>
+        <input onClick={checkBox3} type="checkbox" />
+        <span className="checkmark" css={checkmark}></span>
+        Upgrade
+      </label>
+      <div css={progress_content}>
+        <div css={progressbar}>
+          <div css={mybar}>
+            <div css={line_container1}>
+              <div css={mini_container1}>
+                <div css={vl}></div>
+                <img css={key} src="/yellow_key.png" alt="" />
               </div>
-
-              <div css={line_container2}>
-                <div css={mini_container2}>
-                  <div css={vl}></div>
-                  <img css={key} src="/yellow_key.png" alt="" />
-                </div>
-              </div>
-
-              <div css={line_container3}>
-                <div css={mini_container3}>
-                  <div css={vl}></div>
-                  <img css={key} src="/yellow_key.png" alt="" />
-                </div>
-              </div>
-              <div css={prcnt}>{`${percent}%`}</div>
             </div>
+
+            <div css={line_container2}>
+              <div css={mini_container2}>
+                <div css={vl}></div>
+                <img css={key} src="/yellow_key.png" alt="" />
+              </div>
+            </div>
+
+            <div css={line_container3}>
+              <div css={mini_container3}>
+                <div css={vl}></div>
+                <img css={key} src="/yellow_key.png" alt="" />
+              </div>
+            </div>
+            <div css={prcnt}>{`${percent}%`}</div>
           </div>
         </div>
-
-        <Locks percent={percent} />
       </div>
+
+      <Locks percent={percent} />
     </div>
   );
 };
