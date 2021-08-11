@@ -19,7 +19,7 @@ const container = css`
   flex-direction: row;
   padding-left: 25px;
   margin-bottom: 10px;
-  margin-top: 20px;
+  margin-top: 14px;
   cursor: pointer;
   font-size: 14px;
   padding-right: 20px;
@@ -27,9 +27,7 @@ const container = css`
 
 const checkmark = css`
   display: flex;
-  top: 0;
-  left: 0;
-  margin-right: 12px;
+  margin-right: 11px;
   height: 12px;
   width: 12px;
   border: 0.1em solid #26a859;
@@ -84,6 +82,12 @@ const key = css`
 const box = css`
   margin: 0px;
   padding: 0px;
+`;
+
+const grow = css`
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
 `;
 
 const Discover = ({ setView }: Props) => {
@@ -156,6 +160,10 @@ const Discover = ({ setView }: Props) => {
     flex-direction: column;
   `;
 
+  const text = css`
+    padding: 0;
+  `;
+
   const checkBox1 = () => {
     console.log(checkbox1);
     setCheckbox1(!checkbox1);
@@ -176,7 +184,7 @@ const Discover = ({ setView }: Props) => {
   return (
     <div css={box}>
       <h1 css={h1}>Discover your next coworker</h1>
-      <div>
+      <div css={text}>
         <label className="container" css={container}>
           <input onClick={checkBox1} type="checkbox" />
           <span className="checkmark" css={checkmark}></span>
@@ -193,34 +201,37 @@ const Discover = ({ setView }: Props) => {
           Upgrade
         </label>
       </div>
-      <div css={progress_content}>
-        <div css={progressbar}>
-          <div css={mybar}>
-            <div css={line_container1}>
-              <div css={mini_container1}>
-                <div css={vl}></div>
-                <img css={key} src="/yellow_key.png" alt="" />
+      <div css={grow}>
+        <div css={progress_content}>
+          <div css={progressbar}>
+            <div css={mybar}>
+              <div css={line_container1}>
+                <div css={mini_container1}>
+                  <div css={vl}></div>
+                  <img css={key} src="/yellow_key.png" alt="" />
+                </div>
               </div>
-            </div>
 
-            <div css={line_container2}>
-              <div css={mini_container2}>
-                <div css={vl}></div>
-                <img css={key} src="/yellow_key.png" alt="" />
+              <div css={line_container2}>
+                <div css={mini_container2}>
+                  <div css={vl}></div>
+                  <img css={key} src="/yellow_key.png" alt="" />
+                </div>
               </div>
-            </div>
 
-            <div css={line_container3}>
-              <div css={mini_container3}>
-                <div css={vl}></div>
-                <img css={key} src="/yellow_key.png" alt="" />
+              <div css={line_container3}>
+                <div css={mini_container3}>
+                  <div css={vl}></div>
+                  <img css={key} src="/yellow_key.png" alt="" />
+                </div>
               </div>
+              <div css={prcnt}>{`${percent}%`}</div>
             </div>
-            <div css={prcnt}>{`${percent}%`}</div>
           </div>
         </div>
+
+        <Locks percent={percent} />
       </div>
-      <Locks percent={percent} />
     </div>
   );
 };
