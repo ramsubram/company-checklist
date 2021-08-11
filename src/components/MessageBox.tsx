@@ -6,7 +6,7 @@ import Welcome from './Welcome';
 import Discover from './Discover';
 import Logo from './Logo';
 import Container from './Container';
-import { workerData } from 'worker_threads';
+import Unlock from './Unlock';
 
 interface IProps {
   id: any;
@@ -90,7 +90,7 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     {
       id: 'Upload',
       heading: "Juhuu you're ready for pokes!",
-      logo: <Logo />,
+      logo: <Unlock />,
       content:
         "Pokes are the candidate's way of showing interest in your workplace.",
       button: 'Find canditates',
@@ -98,10 +98,10 @@ const MessageBox: FC<{ onHide: Function }> = ({ onHide }) => {
     {
       id: 'Thanks',
       heading: 'Thanks for upgrading!',
-      logo: <Logo />,
+      logo: <Unlock />,
       content:
         "You're now on the all" +
-        ' inclusice cruise ' +
+        ' "inclusice cruise" ' +
         ' where every feature and hire included.',
       button: 'Find next hire',
     },

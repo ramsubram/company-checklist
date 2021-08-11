@@ -131,7 +131,7 @@ const Discover = ({ setView }: Props) => {
   const line_container2 = css`
     display: flex;
     position: relative;
-    flex-grow: 1;
+    flex-grow: 1.2;
     flex-direction: column;
     background: ${teal1};
   `;

@@ -42,6 +42,7 @@ const btn = css`
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+  margin-bottom: 5px;
 `;
 
 const h1 = css`
